@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Background</title>
+    <style>
+        body {
+            background: linear-gradient(to right, pink, blue);
+            font: 'Raleway', sans-serif;
+        }
+
+        h2,
+        h3 {
+
+            text-transform: uppercase;
+            border: 1px solid black;
+            text-align: center;
+            display: table;
+            margin-top: 60px;
+            left: 50%;
+            position: relative;
+            transform: translate(-50%, -50%);
+            border-spacing: 14px;
+
+        }
+
+        input {
+            text-transform: uppercase;
+            border: 1px solid black;
+            text-align: center;
+            display: table-column;
+            left: 50%;
+            position: relative;
+            transform: translate(-50%, -50%);
+
+        }
+    </style>
+</head>
+
+<body id="gradient">
+    <h2>Background Generator</h2>
+    <input type="color" oninput="setGradient()" class="color1" name="color1" value="#DE07ED">
+    <input type="color" oninput="setGradient()" class="color2" name="color2" value="#00BFFF">
+    <h3></h3>
+    <script>
+        var css = document.querySelector("h3");
+        var color1 = document.querySelector(".color1");
+        var color2 = document.querySelector(".color2");
+        var body = document.getElementById("gradient");
+
+        function setGradient() {
+            body.style.background = "linear-gradient(to right, " + color1.value + ", " + color2.value + ")";
+            css.textContent = body.style.background + ";";
+        }
+        // color1.addEventListener("input", setGradient);
+        // color2.addEventListener("input", setGradient);
+    </script>
+</body>
+
+</html>
